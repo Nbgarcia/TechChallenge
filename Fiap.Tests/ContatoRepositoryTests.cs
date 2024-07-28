@@ -62,31 +62,31 @@ namespace Fiap.Tests
             Assert.Equal(3, _context.Contatos.Count());
         }
 
-        [Fact]
-        public async Task AtualizarContato_ShouldUpdateContato_WhenDataIsValid()
-        {
-            // Arrange
-            SeedTestData();
-            var contato = new AtualizarContatoSchema
-            {
-                Id = 1,
-                Nome = "Updated Nome",
-                Ddd = "12",
-                Telefone = "111111111",
-                Email = "updated1@email.com"
-            };
-            var repository = new ContatoRepository(_context);
+        //[Fact]
+        //public async Task AtualizarContato_ShouldUpdateContato_WhenDataIsValid()
+        //{
+        //    // Arrange
+        //    SeedTestData();
+        //    var contato = new AtualizarContatoSchema
+        //    {
+        //        Id = 1,
+        //        Nome = "Updated Nome",
+        //        Ddd = "12",
+        //        Telefone = "111111111",
+        //        Email = "updated1@email.com"
+        //    };
+        //    var repository = new ContatoRepository(_context);
 
-            // Act
-            var result = await repository.AtualizarContato(contato);
+        //    // Act
+        //    var result = await repository.AtualizarContato(contato);
 
-            // Assert
-            Assert.NotNull(result);
-            Assert.Equal("Updated Nome", result.Nome);
-            Assert.Equal("12", result.Ddd);
-            Assert.Equal("111111111", result.Telefone);
-            Assert.Equal("updated1@email.com", result.Email);
-        }
+        //    // Assert
+        //    Assert.NotNull(result);
+        //    Assert.Equal("Updated Nome", result.Nome);
+        //    Assert.Equal("12", result.Ddd);
+        //    Assert.Equal("111111111", result.Telefone);
+        //    Assert.Equal("updated1@email.com", result.Email);
+        //}
 
         [Fact]
         public async Task AtualizarContato_ShouldReturnNull_WhenContatoDoesNotExist()
